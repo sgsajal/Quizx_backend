@@ -14,7 +14,7 @@ const app=express();
 app.use(express.json());
 app.use(cors());
 mongoose.set("strictQuery",true);
-mongoose.connect("mongodb://127.0.0.1:27017/employee");
+mongoose.connect("mongodb+srv://sajalgarg2021:12345@cluster0.pg4acnt.mongodb.net/");
 var db=mongoose.connection;
 db.on("open",()=>console.log("Connected to DB"));
 db.on("error",()=>console.log("Error Occurred"));
