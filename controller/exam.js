@@ -35,7 +35,7 @@ const submitExam = async (req, res, next) => {
     const userId = req.userId;
 
     const user=await User.findById(userId,{firstname:1,lastname:1});
-    const quiz = await Quiz.findOne({quizName:quizName}, { name: 1,questionList:1});
+    const quiz = await Quiz.findOne({name:quizName}, { name: 1,questionList:1});
     if (!quiz) {
       const err = new ProjectError("No quiz found!");
       err.statusCode = 404;
